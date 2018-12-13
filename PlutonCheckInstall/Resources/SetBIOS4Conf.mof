@@ -1,0 +1,547 @@
+
+#pragma autorecover
+#pragma classflags("forceupdate") 
+
+#pragma namespace("\\\\.\\root\\PanasonicPC")
+
+Instance of __Namespace
+{
+  Name = "Handler";
+};
+
+#pragma namespace("\\\\.\\root\\PanasonicPC\\Handler")
+
+Instance of __Namespace
+{
+  Name = "SetBIOS4Conf";
+};
+
+#pragma namespace("\\\\.\\root\\PanasonicPC")
+
+[
+    dynamic: ToInstance, 
+    provider("PNSNProv"): ToInstance,
+    SupportsUpdate,
+    SupportsDelete
+]
+
+class SetBIOS4Conf
+{
+    // [PROPERTY]
+    // Special Items
+    [read,key]  string  UniqID;
+    [read]  string  SpecVersion;
+    [read]  DATETIME InstanceCreated;
+
+    // Information
+    [read]  string  ModelNumber;                // V3.00
+    [read]  string  SerialNumber;               // V3.00
+    [read]  string  AssetTag;                   // V3.00
+    [read]  string  BIOSVersion;
+    [read]  string  BIOSConfiguration;
+    [read]  string  ECVersion;
+	[read]	string	DockingDeviceType;			// V3.13
+	[read]	string	DockingDeviceModelNumber;	// V3.13
+	[read]	string	DockingDeviceSerialNumber;	// V3.13
+	[read]	string	DockingDeviceECVersion;		// V3.13
+    [read]  string  IntelMEFirmware;            // V3.01
+    [read]  string  IntelTXEFirmware;           // V3.10
+    [read]  sint32  AccumulativeOperatingTime;  // V3.10
+
+    // Main
+    [read]  uint8   TouchPad;
+    [read]  uint8   TouchScreenMode;
+    [read]  uint8   FnCtrlKey;
+    [read]  uint8   RightCtrlKey;               // V3.01
+    [read]  uint8   TenKeyMode;                 // V3.01
+    [read]  uint8   SASButton;                  // V3.04
+    [read]  uint8   HandleButton;               // V3.01
+    [read]  uint8   B1Button;                   // V3.04
+    [read]  uint8   B2Button;                   // V3.04
+    [read]  uint8   A1Button;                   // V3.11
+    [read]  uint8   A2Button;                   // V3.07
+    [read]  uint8   WindowsButton;              // V3.11
+    [read]  uint8   RotationLockButtonKey;      // V3.10
+    [read]  uint8   A1ButtonAction;             // V3.11
+    [read]  uint8   A2ButtonAction;             // V3.11
+    [read]  uint8   UpDownButtonAction;         // V3.11
+    [read]  uint8   RotationLockButtonAction;   // V3.11
+    [read]  uint8   EjectionHotkey;             // V3.11
+	[read]	uint8	ApplicationHotkey;			// V3.13
+    [read]  uint8   Display;
+    [read]  uint8   DiscreteGraphics;           // V3.04
+    [read]  uint8   SwitchableGraphics;         // V3.01
+    [read]  uint8   LCDBrightnessMode;
+    [read]  uint8   LCDLowBrightnessMode;       // V3.11
+    [read]  uint8   CPUPowerMode;               // V3.01
+    [read]  uint8   OpticalDrivePower;
+    [read]  uint8   BatteryChargingIndicator;   // V3.01
+    [read]  uint8   BatteryChargingLEDMode;     // V3.01
+    [read]  uint8   PowerOnAC;
+    [read]  uint8   PowerOnBeep;
+    [read]  uint8   LIDSwitch;
+    [read]  uint8   WirelessAntennaSwitching;   // V3.01
+    [read]  uint8   WirelessWANAntenna;
+    [read]  uint8   WiredLANPortSwitching;	// V3.07
+    [read]  uint8   Environment;
+    [read]  uint8   ConcealedMode;
+    [read]  uint8   ConcealedModeLCDBacklight;  // V3.04
+    [read]  uint8   ConcealedModeLED;           // V3.04
+    [read]  uint8   ConcealedModeSound;         // V3.04
+    [read]  uint8   ConcealedModeWirelessRadio; // V3.04
+    [read]  uint8   ConcealedModeCameraLight;   // V3.04
+    [read]  uint8   ConcealedModeBacklitKeyboard; // V3.04
+    [read]  uint8   ConcealedModeFan;           // V3.04
+    [read]  uint8   ConcealedModeTriggerKey;    // V3.04
+    [read]  uint8   ConcealedModeBarcodeReader; // V3.07
+    [read]  uint8   ConcealedModeTouchscreen;	// V3.11
+    [read]  uint8   WirelessWANID;              // V3.00
+    [read]  uint8   AmbientLightSensorAutomaticDisplayBrightness; // V3.04
+    [read]  uint8   AmbientLightSensorThreshold;  // V3.04
+    [read]  uint8   USBChargeSettingsAlwaysOnCharging;  // V3.10
+    [read]  uint8   USBChargeSettingsQuickCharging;     // V3.10
+	[read]	uint8	SoftwareGuardExtensionsTechnology;	// V3.13
+	[read]	uint8	ProcessorReservedMemory;	// V3.13
+
+    // Advanced
+    [read]  uint8   ExecuteDisableBit;
+    [read]  uint8   HyperThreadingTechnology;
+    [read]  uint8   CoreMultiProcessing;
+    [read]  uint8   VirtualizationTechnology;
+    [read]  uint8   VTd;                        // V3.01
+    [read]  uint8   TrustedExecutionTechnology; // V3.10
+    [read]  uint8   TurboBoostTechnology20;     // V3.01
+
+    [read]  uint8   SerialPortA;
+    [read]  uint8   SerialPortB;
+    [read]  uint8   GPS;
+    [read]  uint8   ParallelPort;
+    [read]  uint8   BarcodeReader;
+    [read]  uint8   BarcodeReaderTriggerMode;   // V3.04
+
+    [read]  uint8   SATAModeSelection;
+    [read]  uint8   OpticalDrive;
+    [read]  uint8   LAN;
+    [read]  uint8   PowerOnbyLAN;
+    [read]  uint8   Modem;
+
+    [read]  uint8   WirelessSwitch;
+    [read]  uint8   WirelessReadyIndicator;     // V3.01
+    [read]  uint8   WirelessLAN;
+    [read]  uint8   WirelessWAN;
+    [read]  uint8   Bluetooth;
+    [read]  uint8   WiMAX;                      // V3.07
+	[read]	uint8	ExtAntennaSelect;			// V3.13
+	[read]	uint8	ExtAntennaSingle;			// V3.13
+	[read]	uint8	ExtAntennaDual;				// V3.13
+
+    [read]  uint8   UpperExtAntenna;            // V3.01
+    [read]  uint8   LowerExtAntenna;            // V3.01
+    [read]  uint8   Touchscreen;                // V3.01
+    [read]  uint8   GLONASS;               	// V3.07
+    [read]  uint8   ExpressCardSlot;
+    [read]  uint8   PCCardSlot;
+    [read]  uint8   LegacyCardSupport;          // V3.01
+    [read]  uint8   SDSlot;
+    [read]  uint8   IEEE1394Port;
+    [read]  uint8   SmartCard;
+    [read]  uint8   USBPort;
+    [read]  uint8   USB30Port0;                 // V3.04
+    [read]  uint8   USB30Port1;                 // V3.04
+    [read]  uint8   USB30Port2;                 // V3.04
+    [read]  uint8   USB30Port3;                 // V3.04
+    [read]  uint8   PortReplicatorUSBPort;
+    [read]  uint8   PortReplicatorUSB30Port0;   // V3.08
+    [read]  uint8   PortReplicatorUSB30Port1;   // V3.08
+    [read]  uint8   PortReplicatorUSB30Port2;   // V3.08
+    [read]  uint8   PortReplicatorUSB30Port3;   // V3.08
+    [read]  uint8   CradleUSBPortPXEBoot;
+	[read]	uint8	WakeupByUSBActivity;		// V3.13
+    [read]  uint8   LegacyUSBSupport;
+    [read]  uint8   ExtensionPort;				// V3.09
+    [read]  uint8   Camera;                     // V3.01
+    [read]  uint8   CameraRear;                 // V3.01
+	[read]  uint8   BarcodeReaderTrigger;		// V3.09
+    [read]  uint8   Audio;                      // V3.03
+    [read]  uint8   Microphone;                 // V3.01
+    [read]  uint8   LAN2nd;                     // V3.01
+    [read]  uint8   UHFRFID;                    // V3.10
+    [read]  uint8   RFIDReader;
+    [read]  uint8   MagneticStripeCardReader;   // V3.10
+    [read]  uint8   InputPanelButton;           // V3.01
+    [read]  uint8   RotationButton;             // V3.01
+    [read]  uint8   SecurityButton;             // V3.01
+    [read]  uint8   UserButton;                 // V3.01
+    [read]  uint8   SmartConnectTechnology;     // V3.07
+    [read]  uint8   USBParticularPort0;         // V3.11
+    [read]  uint8   USBParticularPort1;         // V3.11
+    [read]  uint8   USBParticularPort2;         // V3.11
+    [read]  uint8   USBParticularPort3;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort0;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort1;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort2;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort3;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort4;         // V3.11
+    [read]  uint8   SuperSpeedUSBPort5;         // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort0;   // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort1;   // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort2;   // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort3;   // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort4;   // V3.11
+    [read]  uint8   PortReplicatorSuperSpeedUSBPort5;   // V3.11
+
+    // Boot
+    [read]  uint8   BootMode;                   // V3.01
+    [read]  uint8   UEFIBoot;                   // V3.07
+    [read]  uint8   CSMSupport;                 // V3.07
+    [read]  uint8   UEFIBootFromHardDisk;       // V3.07
+    [read]  uint8   UEFIBootFromOpticalDrive;   // V3.07
+    [read]  uint8   UEFIBootFromLAN;            // V3.07
+    [read]  uint8   UEFIBootFromUSB;            // V3.07
+    [read]  uint8   PrimaryBootDrive;           // V3.10
+    
+    [read]  sint32  BootNum;
+    [read]  sint32  BootMaxNum;
+
+    // Security
+    [read]  uint8   SetupUtilityPrompt;
+    [read]  uint8   BootPopupMenu;              // V3.01
+    [read]  uint8   PasswordonBoot;
+    [read]  uint8   PasswordOnReboot;           // V3.01
+    [read]  uint8   PasswordOnResume;           // V3.01
+    [read]  uint8   BootDeviceOnHibernationResume; // V3.01
+    [read]  uint8   SupervisorPassword;
+    [read]  uint8   HardDiskLock;
+    [read]  uint8   UserPasswordProtection;
+    [read]  uint8   UserPassword;
+    [read]  sint32  SupervisorPasswordMaxLength;
+    [read]  sint32  SupervisorPasswordMinLength;
+    [read]  sint32  UserPasswordMaxLength;
+    [read]  sint32  UserPasswordMinLength;
+    [read]  uint8   SWKBSupportForEncryption;   // V3.07
+	[read]	uint8	SWKBSupportForBitlocker;	// V3.13
+    [read]  uint8   IntelMESetupPrompt;         // V3.01
+    [read]  uint8   USBConfigure;               // V3.01
+    [read]  uint8   SecureBootControl;          // V3.07
+
+    [read]  uint8   AntennaConfigID;            // V3.04
+
+
+
+
+    // [METHOD]
+    // Information
+
+
+
+
+    [static, Implemented]   sint32  SetAssetTag([IN] string inValue); // V3.00
+
+
+
+
+    // Main
+    [static, Implemented]   sint32  SetTouchPad([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetTouchScreenMode([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetFnCtrlKey([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetRightCtrlKey([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetTenKeyMode([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetSASButton([IN] uint8 inValue);    // V3.04
+    [static, Implemented]   sint32  SetHandleButton([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetB1Button([IN] uint8 inValue);     // V3.04
+    [static, Implemented]   sint32  SetB2Button([IN] uint8 inValue);     // V3.04
+    [static, Implemented]   sint32  SetA1Button([IN] uint8 inValue);     // V3.11
+    [static, Implemented]   sint32  SetA2Button([IN] uint8 inValue);     // V3.07
+    [static, Implemented]   sint32  SetWindowsButton([IN] uint8 inValue);   // V3.11
+    [static, Implemented]   sint32  SetRotationLockButtonKey([IN] uint8 inValue); // V3.10
+    [static, Implemented]   sint32  SetA1ButtonAction([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetA2ButtonAction([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetUpDownButtonAction([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetRotationLockButtonAction([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetEjectionHotkey([IN] uint8 inValue);  // V3.11
+	[static, Implemented]	sint32	SetApplicationHotkey([IN] uint8 inValue);			// V3.13
+    [static, Implemented]   sint32  SetDisplay([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetDiscreteGraphics([IN] uint8 inValue);   // V3.04
+    [static, Implemented]   sint32  SetSwitchableGraphics([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetLCDBrightnessMode([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetLCDLowBrightnessMode([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetCPUPowerMode([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetOpticalDrivePower([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetBatteryChargingIndicator([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetBatteryChargingLEDMode([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetPowerOnAC([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetPowerOnBeep([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetLIDSwitch([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetWirelessAntennaSwitching([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetWirelessWANAntenna([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetWiredLANPortSwitching([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetEnvironment([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetConcealedMode([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetConcealedModeLCDBacklight([IN] uint8 inValue);    // V3.04
+    [static, Implemented]   sint32  SetConcealedModeLED([IN] uint8 inValue);             // V3.04
+    [static, Implemented]   sint32  SetConcealedModeSound([IN] uint8 inValue);           // V3.04
+    [static, Implemented]   sint32  SetConcealedModeWirelessRadio([IN] uint8 inValue);   // V3.04
+    [static, Implemented]   sint32  SetConcealedModeCameraLight([IN] uint8 inValue);     // V3.04
+    [static, Implemented]   sint32  SetConcealedModeBacklitKeyboard([IN] uint8 inValue); // V3.04
+    [static, Implemented]   sint32  SetConcealedModeFan([IN] uint8 inValue);             // V3.04
+    [static, Implemented]   sint32  SetConcealedModeTriggerKey([IN] uint8 inValue);      // V3.04
+    [static, Implemented]   sint32  SetConcealedModeBarcodeReader([IN] uint8 inValue);   // V3.07
+    [static, Implemented]   sint32  SetConcealedModeTouchscreen([IN] uint8 inValue);     // V3.11
+    [static, Implemented]   sint32  SetWirelessWANID([IN] uint8 inValue); // V3.00
+    [static, Implemented]   sint32  SetAmbientLightSensorAutomaticDisplayBrightness([IN] uint8 inValue); // V3.04
+    [static, Implemented]   sint32  SetAmbientLightSensorThreshold([IN] uint8 inValue);  // V3.04
+    [static, Implemented]   sint32  SetUSBChargeSettingsAlwaysOnCharging([IN] uint8 inValue);  // V3.10
+    [static, Implemented]   sint32  SetUSBChargeSettingsQuickCharging([IN] uint8 inValue);     // V3.10
+
+    // Advanced
+    [static, Implemented]   sint32  SetExecuteDisableBit([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetCoreMultiProcessing([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetHyperThreadingTechnology([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetVirtualizationTechnology([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetVTd([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetTurboBoostTechnology20([IN] uint8 inValue); // V3.01
+	[static, Implemented]	sint32	SetSoftwareGuardExtensionsTechnology([IN] uint8 inValue);	// V3.13
+	[static, Implemented]	sint32	SetProcessorReservedMemory([IN] uint8 inValue);		// V3.13
+
+    [static, Implemented]   sint32  SetSerialPortA([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetSerialPortB([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetGPS([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetParallelPort([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetBarcodeReader([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetBarcodeReaderTriggerMode([IN] uint8 inValue); // V3.04
+
+    [static, Implemented]   sint32  SetSATAModeSelection([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetOpticalDrive([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetLAN([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetPowerOnbyLAN([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetModem([IN] uint8 inValue);
+
+    [static, Implemented]   sint32  SetWirelessSwitch([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetWirelessReadyIndicator([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetWirelessLAN([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetWirelessWAN([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetBluetooth([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetWiMAX([IN] uint8 inValue); // V3.07
+	[static, Implemented]	sint32	SetExtAntennaSelect([IN] uint8 inValue);			// V3.13
+	[static, Implemented]	sint32	SetExtAntennaSingle([IN] uint8 inValue);			// V3.13
+	[static, Implemented]	sint32	SetExtAntennaDual([IN] uint8 inValue);				// V3.13
+
+    [static, Implemented]   sint32  SetUpperExtAntenna([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetLowerExtAntenna([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetTouchscreen([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetGLONASS([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetExpressCardSlot([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetPCCardSlot([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetLegacyCardSupport([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetSDSlot([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetIEEE1394Port([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetSmartCard([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetUSBPort([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetUSB30Port0([IN] uint8 inValue);       // V3.04
+    [static, Implemented]   sint32  SetUSB30Port1([IN] uint8 inValue);       // V3.04
+    [static, Implemented]   sint32  SetUSB30Port2([IN] uint8 inValue);       // V3.04
+    [static, Implemented]   sint32  SetUSB30Port3([IN] uint8 inValue);       // V3.04
+    [static, Implemented]   sint32  SetPortReplicatorUSBPort([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetPortReplicatorUSB30Port0([IN] uint8 inValue);       // V3.08
+    [static, Implemented]   sint32  SetPortReplicatorUSB30Port1([IN] uint8 inValue);       // V3.08
+    [static, Implemented]   sint32  SetPortReplicatorUSB30Port2([IN] uint8 inValue);       // V3.08
+    [static, Implemented]   sint32  SetPortReplicatorUSB30Port3([IN] uint8 inValue);       // V3.08
+    [static, Implemented]   sint32  SetCradleUSBPortPXEBoot([IN] uint8 inValue);
+	[static, Implemented]	sint32	SetWakeupByUSBActivity([IN] uint8 inValue);			// V3.13
+    [static, Implemented]   sint32  SetLegacyUSBSupport([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetExtensionPort([IN] uint8 inValue);			// V3.09
+    [static, Implemented]   sint32  SetCamera([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetCameraRear([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetBarcodeReaderTrigger([IN] uint8 inValue);	// V3.09
+    [static, Implemented]   sint32  SetAudio([IN] uint8 inValue); // V3.03
+    [static, Implemented]   sint32  SetMicrophone([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetLAN2nd([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetUHFRFID([IN] uint8 inValue);                  // V3.10
+    [static, Implemented]   sint32  SetRFIDReader([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetMagneticStripeCardReader([IN] uint8 inValue); // V3.10
+
+    [static, Implemented]   sint32  SetInputPanelButton([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetRotationButton([IN] uint8 inValue);   // V3.01
+    [static, Implemented]   sint32  SetSecurityButton([IN] uint8 inValue);   // V3.01
+    [static, Implemented]   sint32  SetUserButton([IN] uint8 inValue);       // V3.01
+    [static, Implemented]   sint32  SetSmartConnectTechnology([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetUSBParticularPort0([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetUSBParticularPort1([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetUSBParticularPort2([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetUSBParticularPort3([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort0([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort1([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort2([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort3([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort4([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetSuperSpeedUSBPort5([IN] uint8 inValue);  // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort0([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort1([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort2([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort3([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort4([IN] uint8 inValue);    // V3.11
+    [static, Implemented]   sint32  SetPortReplicatorSuperSpeedUSBPort5([IN] uint8 inValue);    // V3.11
+
+    // Boot
+    [static, Implemented]   sint32  SetBootMode([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetUEFIBoot([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetCSMSupport([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetUEFIBootFromHardDisk([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetUEFIBootFromOpticalDrive([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetUEFIBootFromLAN([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetUEFIBootFromUSB([IN] uint8 inValue); // V3.07
+    [static, Implemented]   sint32  SetPrimaryBootDrive([IN] uint8 inValue); // V3.10
+
+    [static, Implemented]   sint32  GetBootOption([OUT,WmiSizeIs( "256" )] uint8 outValue[]);
+    [static, Implemented]   sint32  SetBootOption([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  GetBootableDevices([OUT,WmiSizeIs( "256" )] uint8 outValue[]);
+
+    // Security
+    [static, Implemented]   sint32  SetSetupUtilityPrompt([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetBootPopupMenu([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetPasswordonBoot([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetPasswordOnReboot([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetPasswordOnResume([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetBootDeviceOnHibernationResume([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetSupervisorPassword([IN] string inValue);
+    [static, Implemented]   sint32  SetSupervisorPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  SetHardDiskLock([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetUserPasswordProtection([IN] uint8 inValue);
+    [static, Implemented]   sint32  SetUserPassword([IN] string inValue);
+    [static, Implemented]   sint32  SetUserPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  SetSWKBSupportForEncryption([IN] uint8 inValue); // V3.07
+	[static, Implemented]	sint32	SetSWKBSupportForBitlocker([IN] uint8 inValue);		// V3.13
+    [static, Implemented]   sint32  SetIntelMESetupPrompt([IN] uint8 inValue); // V3.01
+    [static, Implemented]   sint32  SetUSBConfigure([IN] uint8 inValue); // V3.01
+
+// for DEBUG ////////////
+    [static, Implemented]   sint32  ChkSupervisorPassword([IN] string inValue);
+    [static, Implemented]   sint32  ChkSupervisorPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  ChkUserPassword([IN] string inValue);
+    [static, Implemented]   sint32  ChkUserPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+
+    [static, Implemented]   sint32  SetBIOS4Conf_SystemSetting_CheckACLineStatus([IN] uint8 inValue);
+
+///////////////////////
+
+    [static, Implemented]   sint32  AccessAuthorization([IN] string inValue);
+    [static, Implemented]   sint32  AccessAuthorizationScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  AccessLogout();
+
+    [static, Implemented]   sint32  ClearSupervisorPassword([IN] string inValue);
+    [static, Implemented]   sint32  ClearSupervisorPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+    [static, Implemented]   sint32  ChangeSupervisorPassword(
+                                                    [IN] string inValue_Current,
+                                                    [IN] string inValue_Change);
+    [static, Implemented]   sint32  ChangeSupervisorPasswordScanCode(
+                                                    [IN, WmiSizeIs( "256" )] uint8 inValue_Current[],
+                                                    [IN, WmiSizeIs( "256" )] uint8 inValue_Change[]);
+    //[static, Implemented] sint32  ClearUserPassword( );
+    [static, Implemented]   sint32  ClearUserPassword([IN] string inValue);
+    [static, Implemented]   sint32  ClearUserPasswordScanCode([IN, WmiSizeIs( "256" )] uint8 inValue[]);
+
+    //[static, Implemented] sint32  ChangeUserPassword( [IN] string inValue_Change );
+    [static, Implemented]   sint32  ChangeUserPassword(
+                                                     [IN] string inValue_Current,
+                                                     [IN] string inValue_Change);
+
+    //[static, Implemented] sint32  ChangeUserPasswordScanCode( [IN, WmiSizeIs( "256" )] uint8 inValue_Change[] );
+    [static, Implemented]   sint32  ChangeUserPasswordScanCode(
+                                                     [IN, WmiSizeIs( "256" )] uint8 inValue_Current[],
+                                                     [IN, WmiSizeIs( "256" )] uint8 inValue_Change[]);
+
+
+
+
+
+
+    [static, Implemented]   sint32  GetLastPropertyError( [IN] string inValue );
+};
+
+#pragma namespace("\\\\.\\root\\PanasonicPC\\Handler\\SetBIOS4Conf")
+
+class PNSN_PluginIdent
+{
+    [key] string DllName;
+};
+
+instance of PNSN_PluginIdent
+{
+    DllName = "SetBIOS4Conf.dll";
+};
+
+class PNSN_DllLinkage
+{
+    [key] string WmiEntry;
+          string DllEntry;
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "CreateInstanceEnumAsync";
+
+    DllEntry = "CreateInstanceEnumAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "DeleteInstanceAsync";
+
+    DllEntry = "DeleteInstanceAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "ExecMethodAsync";
+
+    DllEntry = "ExecMethodAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "ExecQueryAsync";
+
+    DllEntry = "ExecQueryAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "GetObjectAsync";
+
+    DllEntry = "GetObjectAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "InitializeAsync";
+
+    DllEntry = "InitializeAsync";
+
+
+
+};
+
+instance of PNSN_DllLinkage
+{
+    WmiEntry = "PutInstanceAsync";
+
+    DllEntry = "PutInstanceAsync";
+
+
+
+};

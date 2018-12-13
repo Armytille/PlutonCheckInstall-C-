@@ -1,0 +1,42 @@
+#pragma autorecover
+#pragma namespace("\\\\.\\root")
+
+Instance of __Namespace
+{
+  Name = "PanasonicPC";
+};
+
+#pragma namespace("\\\\.\\root\\PanasonicPC")
+
+instance of __Win32Provider as $P
+{
+	Name    = "PNSNProv" ;
+
+	// same changed
+	ClsId   = "{7BFAFADA-D34F-415b-8463-4EFE2EC806D0}" ;
+
+	ClientLoadableCLSID = NULL;
+	DefaultMachineName = NULL;
+	ImpersonationLevel = 1;
+	InitializationReentrancy = 0;
+	InitializeAsAdminFirst = FALSE;
+	PerLocaleInitialization = FALSE;
+	PerUserInitialization = TRUE;
+	Pure = TRUE;
+	UnloadTimeout = NULL;
+};    
+
+instance of __InstanceProviderRegistration
+{
+    Provider = $P;
+    SupportsGet = TRUE;
+    SupportsPut = TRUE;
+	SupportsDelete = TRUE;
+    SupportsEnumeration = TRUE;
+//    QuerySupportLevels = {"WQL:UnarySelect"};
+};
+
+Instance of __MethodProviderRegistration
+{
+	Provider = $P;
+};
